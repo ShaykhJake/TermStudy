@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<title>Simple Term Study</title>
+	</head>
+	<body>
+		<div id="PageContainer">
+			<div id="PageContent">
+				<div id="NewUserView" class="view">
+					<h1>Simple Term Study</h1>
+					<hr />
+					<h2>Welcome, new user!</h2>
+					<div id="WelcomeBox">
+						<p>
+							This is a very simple application for creating
+							multiple choice quizzes for studying a list of
+							terms.
+						</p>
+						<p>Important Notes:</p>
+						<ul>
+							<li>
+								All of your progress will be stored locally in
+								your browser.
+							</li>
+							<li>
+								If you move to a different browser, you will not
+								have access to this progress.
+							</li>
+							<li>
+								If you reset your broswer or clear your cache,
+								the progress will be deleted.
+							</li>
+							<li>
+								You have the option (under user settings) to
+								save your progress to a file, which you can load
+								later or elsewhere.
+							</li>
+							<li>
+								NONE of your information will be tracked
+								anywhere outside of your own browser.
+							</li>
+						</ul>
+						<hr />
+						<p>
+							If you acknowledge the above, please set your name
+							so that you can track your progress.
+						</p>
+						<input type="text" id="NewUserName" />
+						<button id="NewUserConfirmButton">
+							Confirm New Username
+						</button>
+						<hr />
+						<p class="tinyText">
+							If you are looking for a more robust learning tool,
+							consider
+							<a href="www.pidginforge.org">PidginForge.org</a>,
+							which is a labor of love and perpetual work in
+							progress.
+						</p>
+					</div>
+				</div>
+
+				<div id="DashboardView" class="view"></div>
+				<div id="ListDetailsView" class="view"></div>
+				<div id="MultipleChoiceView" class="view"></div>
+				<div id="FlashCardsView" class="view"></div>
+				<div id="TermEditView" class="view"></div>
+				<div id="ListEditView" class="view"></div>
+				<div id="UserSettingsView" class="view"></div>
+				<div id="PublicLibrariesView" class="view"></div>
+			</div>
+			<footer id="Footer">
+				<p class="tinyText">
+					<b>Simple Term Study, v1.3</b>, @ Copyright PidginForge 2021
+					- This simple program is FOSS, provided for all to use,
+					modify, and distribute as desired.
+				</p>
+			</footer>
+		</div>
+		<script type="module" src="script_1.4.js"></script>
+	</body>
+</html>

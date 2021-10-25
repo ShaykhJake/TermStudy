@@ -1,0 +1,258 @@
+/* Set Some Color Palette Variables */
+:root {
+	--base: #fafcfc;
+	--surface: #e5eeef;
+	--surface-text: #000000;
+	--button: #fafcfc;
+	--button-hover: #03dac5;
+	--button-text: #000000;
+	--notification: #0a4d46;
+	--notification-hover: #0e8a7d;
+	--notification-text: #ffffff;
+}
+
+body {
+	background-color: var(--base);
+	font-family: "Ubuntu", sans-serif;
+}
+#PageContainer {
+	position: relative;
+	min-height: 100vh;
+}
+#PageContent {
+	padding-bottom: 2.5rem;
+}
+/* Consistent formatting for all views */
+.view {
+	background-color: var(--surface);
+	color: var(--surface-text);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 10px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	text-align: center;
+}
+
+#WelcomeBox {
+	text-align: left;
+}
+
+*** #ImportNewListDialog {
+	display: none;
+}
+
+.fileInput {
+	display: none;
+}
+
+#ListTableDiv,
+.listTableDiv {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+}
+#TermTableDiv {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+}
+
+@media only screen and (max-width: 600px) {
+	#ListTableDiv,
+	.listTableDiv {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 10px;
+		grid-auto-rows: minmax(100px, auto);
+	}
+	#TermTableDiv {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 10px;
+		grid-auto-rows: minmax(100px, auto);
+	}
+}
+
+.listBox {
+	margin-top: 10px;
+	background-color: var(--notification);
+	color: var(--notification-text);
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.termBox {
+	margin-top: 10px;
+	background-color: var(--base);
+	color: var(--surface-text);
+	border-radius: 15px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--surface-text);
+}
+
+button {
+	background-color: var(--button);
+	color: var(--button-text);
+	margin: 2px;
+	padding: 5px;
+	border-radius: 5px;
+	border-width: 1px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+}
+
+#NewUserView {
+	display: block;
+}
+#DashboardView {
+	display: none;
+}
+#ListDetailsView {
+	display: none;
+}
+#MultipleChoiceView {
+	display: none;
+}
+#FlashCardsView {
+	display: none;
+}
+#UserSettingsView {
+	display: none;
+}
+#PublicLibrariesView {
+	display: none;
+}
+#TermEditView {
+	display: none;
+}
+#ListEditView {
+	display: none;
+}
+
+#MCQuizPrompt {
+	color: var(--notification-text);
+	background-color: var(--notification);
+	font-size: 1.2em;
+	font-weight: bold;
+	display: block;
+	border-radius: 5px;
+	margin: 5px;
+	animation-name: cardIn;
+	animation-duration: 200ms;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes cardIn {
+	0% {
+		opacity: 0;
+		transform: scaleX(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scaleX(1);
+	}
+}
+
+.choiceButton {
+	display: block;
+	font-size: 1.2em;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: var(--button);
+	color: var(--button-text);
+	margin: 5px;
+	padding: 5px;
+	cursor: pointer;
+	align-items: center;
+	animation-name: cardIn;
+	animation-duration: 200ms;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
+}
+
+.choiceButtonResponse {
+	display: block;
+	font-size: 1.2em;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: var(--button);
+	color: var(--button-text);
+	margin: 5px;
+	padding: 5px;
+	cursor: default;
+	align-items: center;
+}
+
+.wrong-answer {
+	background-color: pink;
+}
+.right-answer {
+	background-color: lightgreen;
+}
+.wrong-choice {
+	background-color: red;
+	color: white;
+}
+.right-choice {
+	background-color: green;
+	color: white;
+}
+
+.tinyText {
+	font-style: italic;
+	font-size: 0.8em;
+	padding: 3px;
+	margin: 3px;
+}
+
+#SettingsButton,
+.icon-button {
+	color: var(--notification);
+	cursor: pointer;
+}
+
+#Footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+}
+
+/* Hover for Capable Devices */
+@media (hover: hover) {
+	#SettingsButton:hover,
+	.icon-button:hover {
+		color: var(--button-hover);
+	}
+	.termBox:hover {
+		background-color: var(--surface);
+	}
+	.listBox:hover {
+		background-color: var(--notification-hover);
+	}
+	button:hover {
+		background-color: var(--button-hover);
+	}
+	.choiceButton:hover {
+		background-color: var(--button-hover);
+	}
+}
+.blink_me {
+	animation: blinker 0.3s ease-in-out infinite;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
