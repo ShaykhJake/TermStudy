@@ -621,6 +621,7 @@ function renderListTable() {
 
 		// add the class "listBox"
 		box.classList.add("listBox");
+		box.style.animation = "fade-in 0.2s ease-in";
 
 		// calculate mastery
 		let totalMastered = 0;
@@ -866,11 +867,11 @@ function showViewHideOthers(view) {
 	viewElements.forEach((element) => {
 		if (element == view) {
 			element.style.display = "block";
+			element.style.animation = "fade-in 0.3s ease-in";
 		} else {
 			element.style.display = "none";
 		}
 	});
-	// window.focus();
 	const viewportmeta = document.querySelector('meta[name="viewport"]');
 	document.body.scrollTo(0, 0);
 }

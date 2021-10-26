@@ -32,6 +32,11 @@ body {
 	padding-bottom: 2.5rem;
 }
 /* Consistent formatting for all views */
+@keyframes slide {
+	100% {
+		left: 0;
+	}
+}
 .view {
 	background-color: var(--surface);
 	color: var(--surface-text);
@@ -43,6 +48,17 @@ body {
 	margin-right: auto;
 	padding: 10px;
 	text-align: center;
+}
+
+@keyframes fade-in {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	100% {
+		display: block;
+		opacity: 1;
+	}
 }
 
 #WelcomeBox {
