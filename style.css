@@ -1,13 +1,17 @@
 /* Set Some Color Palette Variables */
 :root {
-	--base: #fafcfc;
-	--surface: #e5eeef;
-	--surface-text: #000000;
-	--button: #fafcfc;
-	--button-hover: #03dac5;
-	--button-text: #000000;
-	--notification: #0a4d46;
-	--notification-hover: #0e8a7d;
+	--base: #616161;
+	--surface: #757575;
+	--surface-text: #ffffff;
+	--button: #009688;
+	--button-hover: #5282d4;
+	--button-text: #ffffff;
+	--notification: #009688;
+	--card: #f5f5f5;
+	--card-hover: #bdbdbd;
+	--card-text: #212121;
+	--divider: #bdbdbd;
+	--notification-hover: #5282d4;
 	--notification-text: #ffffff;
 }
 html {
@@ -20,7 +24,8 @@ html {
 }
 body {
 	background-color: var(--base);
-	font-family: "Ubuntu", sans-serif;
+	/* font-family: "Ubuntu", sans-serif; */
+	font-family: "Source Sans Pro", sans-serif;
 	height: 100%;
 	overflow: auto;
 }
@@ -105,20 +110,21 @@ body {
 
 .listBox {
 	margin-top: 10px;
-	background-color: var(--notification);
-	color: var(--notification-text);
+	padding: 5px;
+	background-color: var(--card);
+	color: var(--card-text);
 	border-radius: 15px;
 	cursor: pointer;
 }
 
 .termBox {
 	margin-top: 10px;
-	background-color: var(--base);
-	color: var(--surface-text);
+	background-color: var(--card);
+	color: var(--card-text);
 	border-radius: 15px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: var(--surface-text);
+	border-color: var(--divider);
 }
 
 button {
@@ -259,11 +265,11 @@ button {
 	.icon-button:hover {
 		color: var(--button-hover);
 	}
-	.termBox:hover {
-		background-color: var(--surface);
-	}
+	/* .termBox:hover {
+		background-color: var(--card-hover);
+	} */
 	.listBox:hover {
-		background-color: var(--notification-hover);
+		background-color: var(--card-hover);
 	}
 	button:hover {
 		background-color: var(--button-hover);
