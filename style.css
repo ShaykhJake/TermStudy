@@ -10,10 +10,19 @@
 	--notification-hover: #0e8a7d;
 	--notification-text: #ffffff;
 }
-
+html {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+}
 body {
 	background-color: var(--base);
 	font-family: "Ubuntu", sans-serif;
+	height: 100%;
+	overflow: auto;
 }
 #PageContainer {
 	position: relative;
