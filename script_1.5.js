@@ -94,16 +94,16 @@ function showDashboardView() {
 	DashboardView.innerHTML = `
     <h1 id="DashboardTitle">Welcome, ${
 		userProgress.userName
-	} <i class="material-icons" id="SettingsButton">settings</i></h1>
+	} <i class="material-icons md-36 icon-button" id="SettingsButton">settings</i></h1>
     <p>Date of Last Access: <span id="LastAccessDate">${
 		userProgress.lastAccess
 	}</span></p>
     <hr>
     <h2>Your Term Lists</h2>
-    <button id="CreateListButton">Create List  <i class="material-icons">add</i></button>
+    <button id="CreateListButton">Create List  <i class="material-icons md-24">add</i></button>
     <input id="ImportNewListFile" type="file" class="fileInput" />
-    <button id="ImportNewListButton">Import New List  <i class="material-icons">upload</i></button>
-    <button id="ViewPublicLibrariesButton">Import Public Lists  <i class="material-icons">library_books</i></button>
+    <button id="ImportNewListButton">Import New List  <i class="material-icons md-24">upload</i></button>
+    <button id="ViewPublicLibrariesButton">Import Public Lists  <i class="material-icons md-24">library_books</i></button>
     <div id="ListTableDiv"></div>
     ${
 		!userProgress.termLists || userProgress.termLists.length < 1
@@ -154,9 +154,9 @@ function showUserSettings() {
     <p>Date of Last Backup: <span id="LastSaveDate">${
 		userProgress.lastSaved ? userProgress.lastSaved : "NEVER"
 	}</span></p>
-    <button id="SaveProgressButton">Backup Progress <i class="material-icons">file_download</i></button>
+    <button id="SaveProgressButton">Backup Progress <i class="material-icons md-24">file_download</i></button>
     <input id="LoadProgressFile" type="file" class="fileInput" />
-    <button id="LoadProgressButton">Load Saved Progress  <i class="material-icons">upload</i></button>
+    <button id="LoadProgressButton">Load Saved Progress  <i class="material-icons md-24">upload</i></button>
     <hr>
     <h3>User Info:</h3>
         <label for="UserNameInput">User Name</label>
@@ -185,8 +185,8 @@ function showUserSettings() {
         <label for="HideMasteredInput">Hide Mastered Terms from Quiz</label><br>
     <br>
     <hr>
-    <button id="SaveSettingsButton">Save  <i class="material-icons">done</i></button>
-    <button id="CancelSettingsButton">Cancel  <i class="material-icons">close</i></button>
+    <button id="SaveSettingsButton">Save  <i class="material-icons md-24">done</i></button>
+    <button id="CancelSettingsButton">Cancel  <i class="material-icons md-24">close</i></button>
     `;
 
 	const LoadProgressButton = document.getElementById("LoadProgressButton");
@@ -252,15 +252,15 @@ function showListDetailsView(list) {
 	ListDetailsView.innerHTML = `
         <button id="ReturnToDashboardButton">Return to Dashboard  <i class="material-icons material-icons.md-18">keyboard_return</i></button>
         <hr>
-        <h1 id="#ListViewTitle">${list.title} <i class="material-icons icon-button" id="EditListButton">settings</i></h1>
+        <h1 id="#ListViewTitle">${list.title} <i class="material-icons icon-button md-36" id="EditListButton">settings</i></h1>
         <p>${list.terms.length} Total Terms; <span id="MasteryScoreSpan">XX</span> Mastered</p>
 		<p class="tinyText">mastery stats are based on user preferences</p>
-		<button id="ResetMasteryButton">Reset Mastery</button>
+		<button id="ResetMasteryButton">Reset Mastery <i class="material-icons md-24">restart_alt</i></button>
 		<hr>
-        <button id="TestMultipleChoiceButton">Multiple Choice Quiz <i class="material-icons">quiz</i></button>
+        <button id="TestMultipleChoiceButton">Multiple Choice Quiz <i class="material-icons md-24">quiz</i></button>
         <hr>
-        <button id="AddTermButton">Add New Term <i class="material-icons">add</i></button>
-        <button id="ExportListButton">Export List <i class="material-icons">file_download</i></button>
+        <button id="AddTermButton">Add New Term <i class="material-icons md-24">add</i></button>
+        <button id="ExportListButton">Export List <i class="material-icons md-24">file_download</i></button>
 
         <div id="TermTableDiv"></div>
     `;
@@ -271,7 +271,6 @@ function showListDetailsView(list) {
 		.addEventListener("click", () => {
 			resetMastery(list);
 			showListDetailsView(list);
-			console.log("hello");
 		});
 	const MasteryScoreSpan = document.getElementById("MasteryScoreSpan");
 	// Calculate mastery
@@ -336,7 +335,7 @@ function showListDetailsView(list) {
         `;
 		// Create an Edit Button (must create separately for dynamic assignment)
 		const TermEditButton = document.createElement("div");
-		TermEditButton.innerHTML = `<i class="material-icons icon-button">settings</i>`;
+		TermEditButton.innerHTML = `<i class="material-icons md-36 icon-button">settings</i>`;
 		TermEditButton.addEventListener("click", () => {
 			showTermEditView(term, list);
 		});
@@ -431,9 +430,9 @@ function showListEditView(termList) {
         <label for="TitleInput">List Title</label>
         <input type="text" id="TitleInput" name="TitleInput" value="${termList.title}">
     <hr>
-    <button id="SaveListEditButton">Save Edit  <i class="material-icons">done</i></button>
-    <button id="CancelListEditButton">Cancel Edit  <i class="material-icons">close</i></button>
-    <button id="DeleteListButton">Delete List  <i class="material-icons">delete</i></button>
+    <button id="SaveListEditButton">Save Edit  <i class="material-icons md-24">done</i></button>
+    <button id="CancelListEditButton">Cancel Edit  <i class="material-icons md-24">close</i></button>
+    <button id="DeleteListButton">Delete List  <i class="material-icons md-24">delete</i></button>
     `;
 	const SaveListEditButton = document.getElementById("SaveListEditButton");
 	const CancelListEditButton = document.getElementById(
@@ -492,7 +491,7 @@ function showPublicLibraryView() {
 	const listPackage = publicLibrary.getPackage();
 	showViewHideOthers(PublicLibrariesView);
 	PublicLibrariesView.innerHTML = `
-        <button id="ReturnToDashboardButtonFromLibrary">Return to Dashboard  <i class="material-icons">keyboard_return</i></button>
+        <button id="ReturnToDashboardButtonFromLibrary">Return to Dashboard  <i class="material-icons md-24">keyboard_return</i></button>
         <hr>
         <h1>Public Term List Library</h1>
         <div id="LibraryTableDiv"></div>
@@ -544,12 +543,12 @@ function showTermEditView(term, termList) {
         <input type="text" id="TermInput" name="TermInput" value="${term.term}">
         <br><br>
         <label for="DefinitionInput">Definition</label>
-        <textarea id="DefinitionInput" name="DefinitionInput" rows="4" cols="50">${term.definition}</textarea>
+        <textarea id="DefinitionInput" name="DefinitionInput" rows="4" cols="35">${term.definition}</textarea>
 
     <hr>
-    <button id="SaveTermEditButton">Save Edit <i class="material-icons">done</i></button>
-    <button id="CancelTermEditButton">Cancel Edit <i class="material-icons">close</i></button>
-    <button id="DeleteTermButton">Delete Term  <i class="material-icons">delete</i></button>
+    <button id="SaveTermEditButton">Save Edit <i class="material-icons md-24">done</i></button>
+    <button id="CancelTermEditButton">Cancel Edit <i class="material-icons md-24">close</i></button>
+    <button id="DeleteTermButton">Delete Term  <i class="material-icons md-24">delete</i></button>
     `;
 	const SaveTermEditButton = document.getElementById("SaveTermEditButton");
 	const CancelTermEditButton = document.getElementById(
@@ -802,19 +801,19 @@ function styleAnswers(choice, correctAnswer, container) {
 		const choiceIndex = parseInt(button.getAttribute("data-choice"));
 		if (choiceIndex == correctAnswer && choiceIndex == selectedIndex) {
 			button.classList.add("right-choice");
-			button.innerHTML = `${button.innerHTML} <i class="material-icons">done</i>`;
+			button.innerHTML = `${button.innerHTML} <i class="material-icons md-24">done</i>`;
 		} else if (
 			choiceIndex != correctAnswer &&
 			choiceIndex == selectedIndex
 		) {
 			button.classList.add("wrong-choice");
 
-			button.innerHTML = `${button.innerHTML} <i class="material-icons">close</i>`;
+			button.innerHTML = `${button.innerHTML} <i class="material-icons md-24">close</i>`;
 		} else if (choiceIndex == correctAnswer) {
 			button.classList.add("right-answer");
 			button.classList.add("blink_me");
 			console.log("hello");
-			button.innerHTML = `<i class="material-icons">arrow_forward</i>${button.innerHTML} `;
+			button.innerHTML = `<i class="material-icons md-24">arrow_forward</i>${button.innerHTML} `;
 		} else {
 			button.classList.add("wrong-answer");
 		}
